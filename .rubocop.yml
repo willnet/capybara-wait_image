@@ -4,6 +4,10 @@ AllCops:
   NewCops: enable
   Exclude:
     - "capybara-wait_before_click.gemspec"
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
