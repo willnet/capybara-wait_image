@@ -35,7 +35,6 @@ module Capybara
                    else
                      Logger.new('/dev/null')
                    end
-      end
     end
   end
 
