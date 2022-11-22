@@ -8,18 +8,18 @@ module Capybara
     def _wait_for_image_loading
       Timeout.timeout(Capybara.default_max_wait_time) do
         sleep 0.5 until evaluate_script(<<~JS)
-        Array.prototype.every.call(
-          document.querySelectorAll('img'),
-          (e) => e.complete
-        )
+          Array.prototype.every.call(
+            document.querySelectorAll('img'),
+            (e) => e.complete
+          )
         JS
       end
     rescue Timeout::Error
-      _logger.debug '[capybara-wait_before_click]Timeout::Error'
+      _logger.debug "[capybara-wait_before_click]Timeout::Error"
     rescue Capybara::NotSupportedByDriverError
       # It comes here when you run it in rack-test, but you can ignore it
     rescue Selenium::WebDriver::Error::StaleElementReferenceError
-      _logger.debug '[capybara-wait_before_click]Selenium::WebDriver::Error::StaleElementReferenceError'
+      _logger.debug "[capybara-wait_before_click]Selenium::WebDriver::Error::StaleElementReferenceError"
       reload
       _wait_for_image_loading
     end
@@ -33,7 +33,7 @@ module Capybara
       @_logger ||= if defined?(Rails)
                      Rails.logger
                    else
-                     Logger.new('/dev/null')
+                     Logger.new("/dev/null")
                    end
     end
   end
