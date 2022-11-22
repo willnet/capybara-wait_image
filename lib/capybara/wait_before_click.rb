@@ -4,8 +4,9 @@ require_relative "wait_before_click/version"
 require "capybara"
 
 module Capybara
+  # Wait for image to load before clicking automatically
   module WaitBeforeClick
-    def _wait_for_image_loading
+    def _wait_for_image_loading # rubocop:disable Metrics/MethodLength
       Timeout.timeout(Capybara.default_max_wait_time) do
         sleep 0.5 until evaluate_script(<<~JS)
           Array.prototype.every.call(
