@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 require "capybara/wait_before_click"
+require "capybara/rspec"
+require_relative "app"
+
+Capybara.server = :puma, { Silent: true }
+Capybara.app = App
+Capybara.default_driver = :selenium_chrome_headless
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

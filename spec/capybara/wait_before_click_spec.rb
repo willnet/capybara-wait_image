@@ -1,7 +1,24 @@
 # frozen_string_literal: true
 
-RSpec.describe Capybara::WaitBeforeClick do
-  it "has a version number" do
-    expect(Capybara::WaitBeforeClick::VERSION).not_to be nil
+RSpec.describe Capybara::WaitBeforeClick, type: :feature do
+  it "wait a image before click" do
+    visit "/" # for booting chrome and puma
+
+    without_images_before = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+    visit "/without_images"
+    click_link "Next Page"
+    without_images_after = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+    expect(page).to have_css("h1", text: "Next Page")
+
+    with_a_image_before = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+    visit "/with_a_image"
+    click_link "Next Page"
+    with_a_image_after = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+    expect(page).to have_css("h1", text: "Next Page")
+
+    without_images_duration = without_images_after - without_images_before
+    with_a_image_duration = with_a_image_after - with_a_image_before
+
+    expect(without_images_duration + 2).to be_within(0.2).of(with_a_image_duration)
   end
 end
