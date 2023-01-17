@@ -30,6 +30,11 @@ module Capybara
       super
     end
 
+    def hover
+      _wait_for_image_loading
+      super
+    end
+
     def _logger
       @_logger ||= if defined?(Rails)
                      Rails.logger
