@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require "sinatra"
+require "securerandom"
+
 class App < Sinatra::Base
   get "/next" do
     "<html><body><h1>Next Page</h1></body></html>"
@@ -14,7 +16,7 @@ class App < Sinatra::Base
     %(<html><body><a href='/next'>Next Page</a></body></html>)
   end
 
-  get "/heavy_image.png" do
+  get "/heavy_image/*.png" do
     sleep 2
     send_file("spec/heavy_image.png")
   end

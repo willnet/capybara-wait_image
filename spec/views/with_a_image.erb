@@ -3,7 +3,7 @@
     <script type="text/javascript">
       setTimeout(() => {
         const img = document.createElement('img');
-        img.setAttribute('src', '/heavy_image.png');
+        img.setAttribute('src', '/heavy_image/<%= SecureRandom.hex(10) %>.png');
         document.body.prepend(img);
       }, 1)
     </script>
