@@ -2,16 +2,12 @@
 
 require "sinatra"
 class App < Sinatra::Base
-  get "/" do
-    "<html><body><h1>Root Page</h1></body></html>"
-  end
-
   get "/next" do
     "<html><body><h1>Next Page</h1></body></html>"
   end
 
   get "/with_a_image" do
-    %(<html><body><img src='/heavy_image.png'><a href='/next'>Next Page</a></body></html>)
+    erb :with_a_image
   end
 
   get "/without_images" do
