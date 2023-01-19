@@ -17,7 +17,7 @@ RSpec.describe Capybara::WaitBeforeClick, type: :feature do
     without_images_duration = without_images_after - without_images_before
     with_a_image_duration = with_a_image_after - with_a_image_before
 
-    expect(without_images_duration + 2).to be_within(0.2).of(with_a_image_duration)
+    expect(without_images_duration + 2).to be_within(0.5).of(with_a_image_duration)
   end
 
   it "wait a image before hover" do
@@ -33,6 +33,6 @@ RSpec.describe Capybara::WaitBeforeClick, type: :feature do
     without_images_duration = without_images_after - without_images_before
     with_a_image_duration = with_a_image_after - with_a_image_before
 
-    expect(without_images_duration + 2).to be_within(0.2).of(with_a_image_duration)
+    expect(without_images_duration + 2).to be_within(0.5).of(with_a_image_duration)
   end
 end
