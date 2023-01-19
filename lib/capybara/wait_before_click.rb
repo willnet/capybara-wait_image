@@ -19,7 +19,7 @@ module Capybara
       _logger.debug "[capybara-wait_before_click]Timeout::Error"
     rescue Capybara::NotSupportedByDriverError
       # It comes here when you run it in rack-test, but you can ignore it
-    rescue Selenium::WebDriver::Error::StaleElementReferenceError
+    rescue ::Selenium::WebDriver::Error::StaleElementReferenceError
       _logger.debug "[capybara-wait_before_click]Selenium::WebDriver::Error::StaleElementReferenceError"
       reload
       _wait_for_image_loading
