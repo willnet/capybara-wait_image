@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capybara-wait_before_click (0.2.0)
+    capybara-wait_before_click (0.2.1)
       capybara (~> 3.0)
 
 GEM
