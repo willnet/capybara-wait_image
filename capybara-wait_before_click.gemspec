@@ -30,4 +30,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "capybara", "~> 3.0"
+  spec.post_install_message = <<~MESSAGE
+     The 'capybara-wait_before_click' gem has been deprecated and has been replaced by 'capybara-wait_images'.
+     See: https://rubygems.org/gems/capybara-wait_images
+     And: https://github.com/willnet/capybara-wait_images
+MESSAGE
 end
