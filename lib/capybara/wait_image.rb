@@ -6,6 +6,17 @@ require "capybara"
 module Capybara
   # Wait for image to load automatically
   module WaitImage
+    def _stale_errors
+      return @_stale_errors if defined? @_stale_errors
+
+      @_stale_errors = []
+      if defined? ::Selenium::WebDriver::Error::StaleElementReferenceError
+        @_stale_errors << ::Selenium::WebDriver::Error::StaleElementReferenceError
+      end
+      @_stale_errors << ::Ferrum::NodeNotFoundError if defined? ::Ferrum::NodeNotFoundError
+      @_stale_errors
+    end
+
     def _wait_for_image_loading # rubocop:disable Metrics/MethodLength
       Timeout.timeout(Capybara.default_max_wait_time) do
         sleep 0.5 until evaluate_script(<<~JS)
@@ -19,8 +30,8 @@ module Capybara
       _logger.debug "[capybara-wait_image]Timeout::Error"
     rescue Capybara::NotSupportedByDriverError
       # It comes here when you run it in rack-test, but you can ignore it
-    rescue ::Selenium::WebDriver::Error::StaleElementReferenceError
-      _logger.debug "[capybara-wait_image]Selenium::WebDriver::Error::StaleElementReferenceError"
+    rescue *_stale_errors
+      _logger.debug "[capybara-wait_image]Stale Error"
       reload
       _wait_for_image_loading
     end
