@@ -4,8 +4,6 @@ The main cause of flaky tests in E2E tests using a browser is a click error caus
 
 By adding this gem, the test will wait for the image to be displayed just before each click, hover, etc, thus improving the reliability of the test.
 
-Currently, this gem supports only RSpec, so if you want to use it for other than RSpec, please submit a pull request.
-
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
