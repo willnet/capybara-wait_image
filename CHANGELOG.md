@@ -1,5 +1,1 @@
-## [Unreleased]
-
-## [0.1.0] - 2022-08-24
-
-- Initial release
+See: https://github.com/willnet/capybara-wait_image/releases
