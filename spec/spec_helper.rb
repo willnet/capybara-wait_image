@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "capybara/wait_before_click"
+require "capybara/wait_image"
 require "capybara/rspec"
 require_relative "app"
 

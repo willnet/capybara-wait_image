@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Capybara
-  module WaitBeforeClick
-    VERSION = "0.2.1"
+  module WaitImage
+    VERSION = "0.3.0"
   end
 end

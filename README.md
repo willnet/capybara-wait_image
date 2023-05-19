@@ -1,8 +1,8 @@
-# Capybara::WaitBeforeClick
+# Capybara::WaitImage
 
 The main cause of flaky tests in E2E tests using a browser is a click error caused by an element being out of alignment with the timing of image display.
 
-By adding this gem, the test will wait for the image to be displayed just before each click, thus improving the reliability of the test.
+By adding this gem, the test will wait for the image to be displayed just before each click, hover, etc, thus improving the reliability of the test.
 
 Currently, this gem supports only RSpec, so if you want to use it for other than RSpec, please submit a pull request.
 
@@ -10,7 +10,7 @@ Currently, this gem supports only RSpec, so if you want to use it for other than
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add capybara-wait_before_click --group=test
+    $ bundle add capybara-wait_image --group=test
 
 ## Development
 
@@ -20,7 +20,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/willnet/capybara-wait_before_click. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/willnet/capybara-wait_before_click/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/willnet/capybara-wait_image. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/willnet/capybara-wait_image/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -28,4 +28,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Capybara::WaitBeforeClick project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/willnet/capybara-wait_before_click/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Capybara::WaitImage project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/willnet/capybara-wait_image/blob/main/CODE_OF_CONDUCT.md).

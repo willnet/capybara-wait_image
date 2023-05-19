@@ -3,7 +3,7 @@ AllCops:
   SuggestExtensions: false
   NewCops: enable
   Exclude:
-    - "capybara-wait_before_click.gemspec"
+    - "capybara-wait_image.gemspec"
     - 'node_modules/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'

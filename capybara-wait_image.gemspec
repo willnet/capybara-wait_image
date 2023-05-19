@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require_relative "lib/capybara/wait_before_click/version"
+require_relative "lib/capybara/wait_image/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "capybara-wait_before_click"
-  spec.version = Capybara::WaitBeforeClick::VERSION
+  spec.name = "capybara-wait_image"
+  spec.version = Capybara::WaitImage::VERSION
   spec.authors = ["willnet"]
   spec.email = ["netwillnet@gmail.com"]
 
   spec.summary = "Reduce click miss in E2E tests and increases test stability"
-  spec.description = "Reduce click miss in E2E tests and increases test stability due to waiting for image to load automatically before clicking"
-  spec.homepage = "https://github.com/willnet/capybara-wait_before_click"
+  spec.description = "Reduce click miss in E2E tests and increases test stability due to waiting for image to load automatically"
+  spec.homepage = "https://github.com/willnet/capybara-wait_image"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/willnet/capybara-wait_before_click"
-  spec.metadata["changelog_uri"] = "https://github.com/willnet/capybara-wait_before_click/releases"
+  spec.metadata["source_code_uri"] = "https://github.com/willnet/capybara-wait_image"
+  spec.metadata["changelog_uri"] = "https://github.com/willnet/capybara-wait_image/releases"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

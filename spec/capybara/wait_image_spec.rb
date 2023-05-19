@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Capybara::WaitBeforeClick, type: :feature do
+RSpec.describe Capybara::WaitImage, type: :feature do
   it "wait a image before click" do
     visit "/without_images"
     without_images_before = Process.clock_gettime(Process::CLOCK_MONOTONIC)

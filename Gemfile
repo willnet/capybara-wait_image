@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in capybara-wait_before_click.gemspec
+# Specify your gem's dependencies in capybara-wait_image.gemspec
 gemspec
 
 gem "puma"
