@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capybara-wait_image (0.3.0)
+    capybara-wait_image (0.3.1)
       capybara (~> 3.0)
 
 GEM
