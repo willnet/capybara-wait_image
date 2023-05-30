@@ -14,6 +14,7 @@ module Capybara
         @_stale_errors << ::Selenium::WebDriver::Error::StaleElementReferenceError
       end
       @_stale_errors << ::Ferrum::NodeNotFoundError if defined? ::Ferrum::NodeNotFoundError
+      @_stale_errors << ::Capybara::Cuprite::ObsoleteNode if defined? ::Capybara::Cuprite::ObsoleteNode
       @_stale_errors
     end
 
