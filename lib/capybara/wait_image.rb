@@ -51,7 +51,7 @@ module Capybara
       @_logger ||= if defined?(Rails)
                      Rails.logger
                    else
-                     Logger.new("/dev/null")
+                     Logger.new(File::NULL)
                    end
     end
   end
