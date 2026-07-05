@@ -1,14 +1,14 @@
 <html>
-  <head>
-    <script type="text/javascript">
-      setTimeout(() => {
-        const img = document.createElement('img');
-        img.setAttribute('src', '/heavy_image/<%= SecureRandom.hex(10) %>.png');
-        document.body.prepend(img);
-      }, 1)
-    </script>
-  </head>
   <body>
-    <a href='/next'>Next Page</a>
+    <a href="/next" onmouseover="fetch('/hovered')">Next Page</a>
+    <script type="text/javascript">
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const img = document.createElement('img');
+          img.setAttribute('src', '/heavy_image/<%= SecureRandom.hex(10) %>.png');
+          document.body.prepend(img);
+        }, 0);
+      });
+    </script>
   </body>
 </html>
